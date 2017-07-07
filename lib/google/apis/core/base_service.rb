@@ -403,17 +403,15 @@ module Google
           client.transparent_gzip_decompression = true
           client.proxy = client_options.proxy_url if client_options.proxy_url
 
-          if client_options.open_timeout_sec
-            client.connect_timeout = client_options.open_timeout_sec
-          end
+          client.connect_timeout = 20
 
-          if client_options.read_timeout_sec
-            client.receive_timeout = client_options.read_timeout_sec
-          end
+          # if client_options.read_timeout_sec
+          #   client.receive_timeout = client_options.read_timeout_sec
+          # end
 
-          if client_options.send_timeout_sec
-            client.send_timeout = client_options.send_timeout_sec
-          end
+          # if client_options.send_timeout_sec
+          #   client.send_timeout = client_options.send_timeout_sec
+          # end
 
           client.follow_redirect_count = 5
           client.default_header = { 'User-Agent' => user_agent }
